@@ -50,6 +50,7 @@ class TV_Zenders_Importer {
             logo varchar(255) NOT NULL,
             extras text NOT NULL,
             package text NOT NULL,
+            categorie text NOT NULL,
             PRIMARY KEY  (id)
         ) $charset_collate;";
         
@@ -187,8 +188,9 @@ public function handle_csv_import() {
                     'logo' => $zender_data['logo'],
                     'extras' => $zender_data['extras'],
                     'package' => $zender_data['package'],
+                    'categorie' => $zender_data['categorie'],
                 ),
-                array('%s', '%d', '%s', '%s', '%s')
+                array('%s', '%d', '%s', '%s', '%s', '%s')
             );
             
             if ($result) {
@@ -225,7 +227,8 @@ public function handle_csv_import() {
                 'zender' => isset($parts[1]) ? intval($parts[1]) : 0,
                 'logo' => isset($parts[2]) ? $parts[2] : '',
                 'extras' => isset($parts[3]) ? $parts[3] : '',
-                'package' => isset($parts[4]) ? $parts[4] : ''
+                'package' => isset($parts[4]) ? $parts[4] : '',
+                'categorie' => isset($parts[5]) ? $parts[5] : '',
             );
         }
 
@@ -235,7 +238,8 @@ public function handle_csv_import() {
             'zender' => isset($row[1]) ? intval($row[1]) : 0,
             'logo' => isset($row[2]) ? $row[2] : '',
             'extras' => isset($row[3]) ? $row[3] : '',
-            'package' => isset($row[4]) ? $row[4] : ''
+            'package' => isset($row[4]) ? $row[4] : '',
+            'categorie' => isset($row[5]) ? $row[5] : '',
         );
     }
     
@@ -331,9 +335,9 @@ public function handle_csv_import() {
             <div class="card">
                 <h2>CSV Opmaak Regels</h2>
                 <p>Het CSV Bestand moet de volgende opmaak hebben:</p>
-                <pre>naam,zender,logo,extras,package
-NPO 1,1,npo1.png,"HD,SD","Basispakket,Standaardpakket"
-NPO 2,2,npo2.png,"HD,SD","Basispakket,Standaardpakket"</pre>
+                <pre>naam,zender,logo,extras,package,categorie
+NPO 1,1,npo1.png,"HD,SD","Basispakket,Standaardpakket","DVBC"
+NPO 2,2,npo2.png,"HD,SD","Basispakket,Standaardpakket","DVBC"</pre>
                 <p>Zorg ervoor dat het CSV bestand komma's gebruikt om waardes uit elkaar te houden en dubbele aanhalingstekens voor teksten met komma's. [CSV UTF-8 (door komma's gescheiden) (*.csv)]</p>
             </div>
         </div>
@@ -375,6 +379,7 @@ NPO 2,2,npo2.png,"HD,SD","Basispakket,Standaardpakket"</pre>
                             <th>Logo</th>
                             <th>Extras</th>
                             <th>Package</th>
+                            <th>Categorie</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -385,6 +390,7 @@ NPO 2,2,npo2.png,"HD,SD","Basispakket,Standaardpakket"</pre>
                                 <td><?php echo esc_html($zender->logo); ?></td>
                                 <td><?php echo esc_html($zender->extras); ?></td>
                                 <td><?php echo esc_html($zender->package); ?></td>
+                                <td><?php echo esc_html($zender->categorie); ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

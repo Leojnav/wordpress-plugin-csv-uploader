@@ -1,0 +1,1546 @@
+/*
+Theme Name: Kabeltex
+Theme URI: http://kabeltex.opdeweegh.nl/
+Author: A. op de Weegh
+Author URI: http://opdeweegh.nl/
+Description: Kabeltex thema
+Version: 3.0.14
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: 
+Text Domain: kabeltex
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@import url(css/knowledge-base.css);
+
+/*
+ * Search results
+ */
+.search_result_category {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    color: #443f3f;
+    font-weight: 600;
+    margin: 24px 0px 24px;
+}
+
+
+/* ------------------------------
+ * Global settings
+ * ------------------------------
+ * */
+
+* {
+  /* Include padding and border in the total width and height of elements */
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Raleway", sans-serif;	
+  font-size: 11pt;
+  background-color: rgb(255,255,255);
+}
+
+body {
+  margin: 0;
+  background-color: #f5f3ed;
+}
+.header:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #ff0000, #cc0000);
+}
+#eckb-article-content {
+  background-color: #f5f3ed !important;
+}
+p {
+	line-height: 1.75;
+}
+
+p.user_indicator {
+  font-size: 9pt;
+}
+	
+h1, h2, h3, h4, h5, h6 {
+	padding-top: 36px;
+}
+
+h1 {
+	font-family: "Raleway", sans-serif;
+    font-size: 32px;
+	color: #443f3f;
+    font-weight: 600;
+    margin: 10px 0 24px;
+}
+
+h2 {
+	font-family: "Raleway", sans-serif;
+	font-size: 50px;
+	color: #443f3f;
+    margin: 10px 0 24px;
+	text-align: center;
+	position: relative;
+}
+
+h2:after {
+content: "";
+position: absolute;
+left: 0;
+right: 0;
+bottom: 0;
+width: 50px;
+height: 1px;
+margin-left: auto;
+margin-right: auto;
+background-color: #cc0000;
+box-sizing: border-box;
+}
+
+h3 {
+	font-family: "Raleway", sans-serif;
+    font-size: 32px;
+	color: #443f3f;
+    font-weight: 600;
+    margin: 10px 0 24px;
+}
+
+.abonnement-promo-title {
+	font-family: "Raleway", sans-serif;
+    font-size: 24px;
+	color: #443f3f;
+    font-weight: 600;
+    margin: 10px 0 24px;
+}
+
+h5 {
+	font-family: "Raleway", sans-serif;
+	font-size: 20px;
+	color: #443f3f;
+    font-weight: 600;
+    margin: 10px 0 24px;
+}
+
+.align-right {
+  text-align: right;
+}
+
+button, input[type="submit"], input[type="button"] {
+	border: 1px solid #d65050;
+	background-color: #ff0000;
+    margin: 5px 5px 5px 5px;
+	font-family: "Raleway", sans-serif;
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: 700;
+    padding: 12px 34px;
+    color: #fff;
+    text-transform: uppercase;
+	border-radius: 3px;
+	transition: all 0.3s;
+	-webkit-appearance: button;
+    cursor: pointer;
+	overflow: visible;
+	font: inherit;
+}
+
+button.button-secondary, input[type="submit"].button-secondary, input[type="button"].button-secondary {
+	background-color: #757575;
+	border: 1px solid #757575;
+}
+
+input.vrgb_input {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+button.vrgb_small_button {
+    font-size: 11pt !important;
+    line-height: normal !important;
+    font-weight: normal !important;
+    padding: 6px 17px !important;
+}
+
+.small_button {
+    font-size: 11pt !important;
+    line-height: normal !important;
+    font-weight: normal !important;
+    padding: 6px 17px !important;
+}
+button:hover, input[type="submit"]:hover, input[type="button"]:hover {
+	color: #d65050;
+	background-color: transparent;
+}
+
+.faq-button {
+  display: block;
+  width: 100%;
+  margin: 10px 0 10px 0;
+  text-align: left;
+  text-transform: none;
+  padding: 5px 5px 5px 5px;
+  text-decoration: none;
+  background-color: #e6e6e6;
+}
+
+.faq-button:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.faq-container {
+  display: none;
+  margin: 0 0 30px 0;
+}
+
+.faq-show {
+  display: block;
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #ff0000;
+}
+
+a:visited {
+  text-decoration: underline;
+  color: inherit;
+}
+
+a:active {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 15px;
+}
+
+/* ----------------------------------
+ * Default table styling
+ * ----------------------------------
+ */
+table.kb_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+/* Zebra striping */
+table.kb_table tr:nth-of-type(odd) {
+    background: #eee;
+}
+table.kb_table th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+}
+table.kb_table td, table.kb_table th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: left;
+    vertical-align: top;
+}
+
+table.kb_table thead th {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+/* -----------------------------------
+ * Postcode check popup
+ * -----------------------------------
+ * */
+
+p.huidige_postcode_huisnummer {
+    font-size: 11pt;
+    text-align: right;
+}
+
+button.huidige_postcode_huisnummer {
+	border: 1px solid #757575; /*1px solid #d65050;*/
+	background-color: #757575; /*#ff0000;*/
+	font-family: "Raleway", sans-serif;
+    font-size: 11pt;
+    line-height: 24px;
+    font-weight: 700;
+    padding: 5px 15px; /*12px 34px;*/
+    color: #fff;
+    text-transform: uppercase;
+	border-radius: 3px;
+	transition: all 0.3s;
+	-webkit-appearance: button;
+    cursor: pointer;
+	overflow: visible;
+	font: inherit;
+	margin: 0;
+}
+
+button.huidige_postcode_huisnummer:hover {
+	color: #757575;
+	background-color: transparent;
+}
+
+/* The Modal (background) */
+.postcodecheck_popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.pcpopup-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* -----------------------------------
+ * Tooltips
+ * -----------------------------------
+ * */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: none; /* If you want dots under the hoverable text */
+}
+
+@media only screen and (max-width: 600px) {
+  .tooltip .tooltiptext {
+      width: 120px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .tooltip .tooltiptext {
+      width: 120px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .tooltip .tooltiptext {
+      width: 420px;
+  }
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+
+    bottom: 100%;
+    left: 50%; 
+    margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+ 
+    /* Position the tooltip text */
+    position: absolute;
+    display: block;
+    z-index: 1;
+
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* puntje onder de tooltip */
+/*.tooltip .tooltiptext::after {*/
+/*    content: " ";*/
+/*    position: absolute;*/
+/*    top: 100%; /* At the bottom of the tooltip */
+/*    left: 50%;*/
+/*    margin-left: -5px;*/
+/*    border-width: 5px;*/
+/*    border-style: solid;*/
+/*    border-color: black transparent transparent transparent;*/
+/*}*/
+
+/* -----------------------------------
+ * Ninja forms
+ * -----------------------------------
+ * */
+
+.nf-form-fields-required {
+  font-family: "Raleway", sans-serif;	
+  font-size: 11pt;
+    margin: 11px 0 11px;
+}
+
+/* -----------------------------------
+ * Nieuwsberichten stylen
+ * -----------------------------------
+ * */
+
+.nieuws-titel > a {
+	text-decoration: none;
+}
+
+.nieuws-titel {
+	border-bottom: 1px solid #ff0000;
+}
+
+.nieuws-datum {
+	font-style: italic;
+}
+
+/* -----------------------------------
+ * Meldingen stylen
+ * -----------------------------------
+ * */
+.melding-titel {
+	border-bottom: 1px solid #ff0000;
+}
+
+.melding-datum {
+	font-style: italic;
+}
+
+/* ------------------------------------
+ * Styling the Awesome Fonts
+ * ------------------------------------
+ * */
+
+/* Default settings */
+.fa {
+	color: #ff0000;
+}
+
+/* Exception for the check mark, show in green */
+.fa-check {
+	color: #00ff00;
+}
+
+/* ------------------------------------
+ * Styling the TablePress tables
+ * ------------------------------------
+ * */
+.tablepress {
+	border-spacing: 0px;
+	border: 1px solid grey;
+}
+
+.tablepress thead th {
+	font-weight: bold;
+	background-color: white;
+	border-bottom: 1px solid grey;
+}
+
+/* ------------------------------------
+ * Some changes in the default classes
+ * ------------------------------------
+ */
+.views-row {
+  padding-bottom: 12px;
+}
+
+/* ------------------------------
+ * Grid settings
+ * ------------------------------
+ * */
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .hide-mobile { display: none; }
+}
+
+/* For tablet, use a 12 column grid */
+@media only screen and (min-width: 600px) {
+  .col-m-1 { width: 8.33%; }
+  .col-m-2 { width: 16.66%; }
+  .col-m-3 { width: 25%; }
+  .col-m-4 { width: 33.33%; }
+  .col-m-5 { width: 41.66%; }
+  .col-m-6 { width: 50%; }
+  .col-m-7 { width: 58.33%; }
+  .col-m-8 { width: 66.66%; }
+  .col-m-9 { width: 75%; }
+  .col-m-10 { width: 83.33%; }
+  .col-m-11 { width: 91.66%; }
+  .col-m-12 { width: 100%; }
+}
+
+@media only screen and (max-width: 768px) {
+  .hide-tablet { display: none; }
+}
+
+/* For desktop, use a 12 column grid */
+@media only screen and (min-width: 768px) {
+  .col-1 { width: 8.33%; }
+  .col-2 { width: 16.66%; }
+  .col-3 { width: 25%; }
+  .col-4 { width: 33.33%; }
+  .col-5 { width: 41.66%; }
+  .col-6 { width: 50%; }
+  .col-7 { width: 58.33%; }
+  .col-8 { width: 66.66%; }
+  .col-9 { width: 75%; }
+  .col-10 { width: 83.33%; }
+  .col-11 { width: 91.66%; }
+  .col-12 { width: 100%; }
+}
+
+@media only screen and (min-width: 768px) {
+	.hide-desktop { display: none; }
+}
+
+/* All columns to be floating to the left */
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  border: none;
+}
+
+/* Prevent taking the columns out of the flow of the page */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* ------------------------------
+ * Chart settings
+ * ------------------------------
+ * */
+
+.chart {
+  width: 100%;
+  /*min-height: 600px;*/
+}
+
+/* ------------------------------
+ * Table column settings
+ * ------------------------------
+ * */
+
+.table-container {
+  margin: 15px 0 15px 0;
+}
+
+.table-header {
+	font-weight: bold;
+}
+
+.table-footer {
+  border-top: 1px solid black;
+}
+
+/* For tablet, use a 12 column grid */
+@media only screen and (max-width: 600px) {
+  .table-column-m-1 { width: 8.33%; }
+  .table-column-m-2 { width: 16.66%; }
+  .table-column-m-3 { width: 25%; }
+  .table-column-m-4 { width: 33.33%; }
+  .table-column-m-5 { width: 41.66%; }
+  .table-column-m-6 { width: 50%; }
+  .table-column-m-7 { width: 58.33%; }
+  .table-column-m-8 { width: 66.66%; }
+  .table-column-m-9 { width: 75%; }
+  .table-column-m-10 { width: 83.33%; }
+  .table-column-m-11 { width: 91.66%; }
+  .table-column-m-12 { width: 100%; }
+}
+
+/* For tablet, use a 12 column grid */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .table-column-t-1 { width: 8.33%; }
+  .table-column-t-2 { width: 16.66%; }
+  .table-column-t-3 { width: 25%; }
+  .table-column-t-4 { width: 33.33%; }
+  .table-column-t-5 { width: 41.66%; }
+  .table-column-t-6 { width: 50%; }
+  .table-column-t-7 { width: 58.33%; }
+  .table-column-t-8 { width: 66.66%; }
+  .table-column-t-9 { width: 75%; }
+  .table-column-t-10 { width: 83.33%; }
+  .table-column-t-11 { width: 91.66%; }
+  .table-column-t-12 { width: 100%; }
+}
+
+/* For desktop, use a 12 column grid */
+@media only screen and (min-width: 769px) {
+  .table-column-1 { width: 8.33%; }
+  .table-column-2 { width: 16.66%; }
+  .table-column-3 { width: 25%; }
+  .table-column-4 { width: 33.33%; }
+  .table-column-5 { width: 41.66%; }
+  .table-column-6 { width: 50%; }
+  .table-column-7 { width: 58.33%; }
+  .table-column-8 { width: 66.66%; }
+  .table-column-9 { width: 75%; }
+  .table-column-10 { width: 83.33%; }
+  .table-column-11 { width: 91.66%; }
+  .table-column-12 { width: 100%; }
+}
+
+/* All columns to be floating to the left */
+[class*="table-column-"] {
+	float: left;
+	padding: 3px;
+}
+
+.table-row {
+	border-bottom: 1px solid black;
+}
+
+/* Prevent taking the columns out of the flow of the page */
+.table-row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* ------------------------------
+ * Region settings
+ * ------------------------------
+ * */
+
+.header {
+  box-shadow: 0px 1px 20px 1px rgba(0,0,0,0.8);
+  margin-bottom: 7px;
+  min-height: 120px;
+  background-color: white;
+  color: black;
+  position: relative;
+
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.site-logo {
+  max-height: 60px;
+  width: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .site-logo {
+    max-height: 90px;
+  }
+}
+
+.wrapper {
+	margin: 10px auto 0;
+	width: 100%;
+	z-index: 100;
+}
+
+.header_banner_background {
+  background-color: rgb(225,86,22);
+}
+
+.header_banner {
+  background-color: rgb(34,156,216);
+  transform: skew(-10deg,0deg);
+}
+
+.footer {
+  min-height: 60px;
+  background-color: #d5d5d5;
+  /*background-color: #757575;*/
+  color: #000;
+  padding: 15px;
+}
+
+.footer_banner_background {
+  background-color: rgb(225,86,22);
+}
+
+.footer_banner {
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: rgb(161,197,24);
+  transform: skew(-10deg,0deg);
+}
+#epkb-ml__module-search #epkb-ml-search-modern-layout .epkb-ml-search-box__input {
+	background-color: #f9f9f9 !important;
+}
+#epkb-ml__module-search #epkb-ml-search-modern-layout #epkb-ml-search-form #epkb-ml-search-box .epkb-ml-search-box__btn .epkbfa-ml-search-icon {
+	color: #f9f9f9;
+}
+.content, #epkb-ml__module-search, #epkb-content-container{
+  background-color: #f5f3ed !important;
+}
+#epkb-ml__module-search {
+padding-top: 0px !important;
+}
+/* ------------------------------
+ * Menu settings
+ * ------------------------------
+ * */
+
+/* ------------------------------
+ * Form settings
+ * ------------------------------
+ * */
+
+@media only screen and (max-width: 768px) {
+  input[type=text], input[type=email], select, textarea {
+    width: 100%;
+  }
+}
+
+.form-submit {
+  margin: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+
+}
+
+/* ------------------------------
+ * Form settings postcode/huisnummer
+ * ------------------------------
+ * */
+
+.postcodehuisnummer {
+  display: block;
+  margin: 5px auto 30px auto;
+}
+
+.postcodehuisnummer > form > input {
+  font-size: 11pt;
+}
+
+.postcodehuisnummer > form > input[type=submit] {
+  width: auto;
+  height: auto;
+  padding: 6px 17px;
+}
+
+.postcodehuisnummer > form > input {
+  font-size: 11pt;
+  margin: 5px auto 5px auto;
+}
+
+.postcodehuisnummer > form > input[type=text].postcode {
+  width: 100%;
+}
+
+.postcodehuisnummer > form > input[type=text].huisnummer {
+  width: 100%;
+}
+
+.postcodehuisnummer > form > input[type=text].huisnummertoevoeging {
+  width: 100%;
+}
+
+
+/* ------------------------------
+ * Specific field settings
+ * ------------------------------
+ * */
+
+.date-display-single {
+  display: block;
+  font-style: italic;
+}
+
+.nieuws img {
+  height: auto;
+  float: left;
+  margin: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .nieuws img {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .nieuws img {
+    max-width: 300px;
+  }
+}
+
+/* ------------------------------
+ * Other settings
+ * ------------------------------
+ * */
+
+#logo_bottom {
+  max-height: 40px;
+  width: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a.follow_link {
+    display: block;
+    height: 30px;
+    line-height: 26px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    padding-left: 28px;
+    padding-right: 3px;
+}
+
+/* --------------------------------------
+ * Zenders en zenderlijsten
+ * --------------------------------------
+ * */
+/* Navigation tabs */
+.zenderlijst-tabs {
+	background-color: #ff0000;
+  color: white;
+  font-weight: bold;
+	float: left;
+	width: 100%;
+	margin: 0;
+	list-style-type: none;
+	border-bottom: 1px solid transparent;
+}
+
+.zenderlijst-tabs > li {
+	float: left;
+	margin-bottom: -1px;
+}
+
+.zenderlijst-tabs > li > a {
+	margin-right: 2px;
+	line-height: 1.5;
+	padding: 10px;
+	border: 1px solid transparent;
+	border-radius: 4px 4px 0 0;
+	float: left;
+	text-decoration: none;
+}
+
+.zenderlijst-tabs > li > a:hover {
+	color: #ff0000;
+	background-color: #ddd;
+}
+
+.zenderlijst-tabs > li.active > a,
+.zenderlijst-tabs > li.active > a:hover,
+.zenderlijst-tabs > li.active > a:focus {
+	color: #ff0000;
+	cursor: default;
+	background-color: white;
+}
+
+.zenderlijst-tab-content > .zenderlijst-tab-pane {
+	float: left;
+	display: none;
+	width: 100%;
+}
+
+.zenderlijst-tab-content > .zenderlijst-tab-pane.active {
+	display: block;
+	padding: 10px;
+	background-color: #fff;
+	/* box-shadow: 0 5px 4px -2px rgba(0, 0, 0, 0.15); */
+}
+
+.zenderlijst-zender-logo {
+  height: 40px;
+  width: auto;
+}
+
+
+
+/*
+ * ============================================================================================================
+ */
+
+/* 
+Generic Styling, for Desktops/Laptops 
+*/
+table.kbvrg_adreslijst { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+/* Zebra striping */
+table.kbvrg_adreslijst tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+table.kbvrg_adreslijst th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
+}
+table.kbvrg_adreslijst td, table.kbvrg_adreslijst th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+}
+
+table.kbvrg_adreslijst thead th {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+
+
+
+.add-on-categorie-button {
+  display: block;
+  width: 100%;
+  margin: 10px 0 10px 0;
+  text-align: left;
+  text-transform: none;
+  padding: 5px 5px 5px 35px;
+  text-decoration: none;
+  background-color: #e6e6e6;
+}
+
+.add-on-categorie-button:not(.add-on-button-expanded):before {
+    margin-left: -20px;
+    padding-right: 0;
+    opacity: 1;
+    position: absolute;
+    text-shadow: none;
+    font-family: "Font Awesome 5 Free";
+    /*font-size: 24px;*/
+    font-weight: 900;
+    font-style: normal;
+    font-variant: none;
+    line-height: 1em;
+    text-transform: none;
+    content: "\f103";   /* angle-double-down */
+    transition: all .2s;
+}
+
+.add-on-button-expanded:before {
+    margin-left: -20px;
+    padding-right: 0;
+    opacity: 1;
+    position: absolute;
+    text-shadow: none;
+    font-family: "Font Awesome 5 Free";
+    /*font-size: 24px;*/
+    font-weight: 900;
+    font-style: normal;
+    font-variant: none;
+    line-height: 1em;
+    text-transform: none;
+    content: "\f102";   /* angle-double-up */
+    transition: all .2s;
+}
+
+.add-on-categorie-button:hover {
+  cursor: pointer;
+  color: #0063c0;
+  text-decoration: none;
+}
+
+.add-on-categorie-container {
+  display: none;
+  margin: 0 0 30px 0;
+}
+
+.add-on-categorie-show {
+  display: block;
+}
+.e-mail-instellingen-video h2 {
+	font-size: 32px;
+}
+.e-mail-instellingen-video p {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.e-mail-instellingen-video .header-blok1 {
+    background-color: #cc0000;
+    padding: 15px 0; 
+    text-align: center;
+    color: #fff;
+    position: relative; 
+	box-shadow: 0 0 0 100vmax #cc0000;
+    clip-path: inset(0 -100vmax);
+}
+.e-mail-instellingen-video .header-blok1 .wp-block-column {
+	    max-width: 1080px; 
+    margin: 0 auto;
+	padding: 0px 20px;
+    position: relative; 
+    z-index: 1; 
+}
+.e-mail-instellingen-video .header-blok1 p {
+    margin: 8px 0 0;
+    font-size: 14px;
+	line-height: 16px;
+}
+.e-mail-instellingen-video .header-blok1 h2 {
+    color: #fff;
+    font-size: 32px;
+	margin: 0px ;
+	padding-top: 0px;
+}
+.e-mail-instellingen-video .header-blok1 h2:after {
+	height: 0px !important;
+}
+.e-mail-instellingen-video .blok1, 
+.e-mail-instellingen-video .blok2, 
+.e-mail-instellingen-video .blok3, 
+.e-mail-instellingen-video .blok4, 
+.e-mail-instellingen-video .blok5, 
+.e-mail-instellingen-video .blok6, 
+.e-mail-instellingen-video .blok7, 
+.e-mail-instellingen-video .blok8, 
+.e-mail-instellingen-video .blok9, 
+.e-mail-instellingen-video .blok10 {
+	   background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+.e-mail-instellingen-video .blok1 hr, 
+.e-mail-instellingen-video .blok2 hr, 
+.e-mail-instellingen-video .blok3 hr, 
+.e-mail-instellingen-video .blok4 hr, 
+.e-mail-instellingen-video .blok5 hr, 
+.e-mail-instellingen-video .blok6 hr, 
+.e-mail-instellingen-video .blok7 hr, 
+.e-mail-instellingen-video .blok8 hr, 
+.e-mail-instellingen-video .blok9 hr, 
+.e-mail-instellingen-video .blok10 hr {
+	border-color: #cc0000;
+}
+.e-mail-instellingen-video .blok1 h3, 
+.e-mail-instellingen-video .blok2 h3, 
+.e-mail-instellingen-video .blok3 h3, 
+.e-mail-instellingen-video .blok4 h3, 
+.e-mail-instellingen-video .blok5 h3, 
+.e-mail-instellingen-video .blok6 h3, 
+.e-mail-instellingen-video .blok7 h3, 
+.e-mail-instellingen-video .blok8 h3,
+.e-mail-instellingen-video .blok9 h3, 
+.e-mail-instellingen-video .blok10 h3 {
+	padding-top: 10px;
+	color: #cc0000;
+	font-size: 22px;
+}
+.e-mail-instellingen-video a {
+	color: #cc0000;
+}
+.e-mail-instellingen-video a.wp-element-button {
+	color:#fff;
+}
+.e-mail-instellingen-video .blok1 a:hover, 
+.e-mail-instellingen-video .blok2 a:hover, 
+.e-mail-instellingen-video .blok3 a:hover, 
+.e-mail-instellingen-video .blok4 a:hover, 
+.e-mail-instellingen-video .blok5 a:hover, 
+.e-mail-instellingen-video .blok6 a:hover, 
+.e-mail-instellingen-video .blok7 a:hover, 
+.e-mail-instellingen-video .blok8 a:hover,
+.e-mail-instellingen-video .blok9 a:hover, 
+.e-mail-instellingen-video .blok10 a:hover {
+	text-decoration: none;
+	color: #cc0000;
+}
+.e-mail-instellingen-video .blok1 ul, 
+.e-mail-instellingen-video .blok2 ul, 
+.e-mail-instellingen-video .blok3 ul, 
+.e-mail-instellingen-video .blok4 ul, 
+.e-mail-instellingen-video .blok5 ul, 
+.e-mail-instellingen-video .blok6 ul, 
+.e-mail-instellingen-video .blok7 ul, 
+.e-mail-instellingen-video .blok8 ul {
+	color: #cc0000;
+	font-size: 16px;
+	font-weight: bold;
+	padding-left: 0px;
+	list-style-type: none;
+}
+.e-mail-instellingen-video .blok1 ul li, 
+.e-mail-instellingen-video .blok2 ul li, 
+.e-mail-instellingen-video .blok3 ul li, 
+.e-mail-instellingen-video .blok4 ul li, 
+.e-mail-instellingen-video .blok5 ul li, 
+.e-mail-instellingen-video .blok6 ul li, 
+.e-mail-instellingen-video .blok7 ul li, 
+.e-mail-instellingen-video .blok8 ul li, 
+.e-mail-instellingen-video .blok9 ul li, 
+.e-mail-instellingen-video .blok10 ul li {
+	margin: 5px 0px;
+}
+.e-mail-instellingen-video .blok1 ul li a, 
+.e-mail-instellingen-video .blok2 ul li a, 
+.e-mail-instellingen-video .blok3 ul li a, 
+.e-mail-instellingen-video .blok4 ul li a {
+	text-decoration: none;
+	text-align: center;
+}
+.e-mail-instellingen-video .blok1 ul, 
+.e-mail-instellingen-video .blok2 ul, 
+.e-mail-instellingen-video .blok3 ul, 
+.e-mail-instellingen-video .blok4 ul {
+	text-align: center;
+}
+.e-mail-instellingen-video .blok1 ul li a i, 
+.e-mail-instellingen-video .blok2 ul li a i, 
+.e-mail-instellingen-video .blok3 ul li a i, 
+.e-mail-instellingen-video .blok4 ul li a i {
+	color: #000
+}
+.e-mail-instellingen-video .blok1 h4, 
+.e-mail-instellingen-video .blok2 h4, 
+.e-mail-instellingen-video .blok3 h4, 
+.e-mail-instellingen-video .blok4 h4, 
+.e-mail-instellingen-video .blok5 h4, 
+.e-mail-instellingen-video .blok6 h4, 
+.e-mail-instellingen-video .blok7 h4, 
+.e-mail-instellingen-video .blok8 h4,
+.e-mail-instellingen-video .blok9 h4, 
+.e-mail-instellingen-video .blok10 h4 {
+	font-size: 16px;
+	padding-top:0px;
+}
+.e-mail-instellingen-video .wp-block-table td, .e-mail-instellingen-video .wp-block-table th {
+	border: 0px;
+}
+.e-mail-instellingen-video .wp-block-table th {
+	background-color: #eee;
+}
+.e-mail-instellingen-video .wp-block-table tbody tr:nth-child(even) {
+	background-color: #eee;
+}
+.e-mail-instellingen-video .tv2go-img {
+	text-align: center;
+}
+@media only screen and (min-width: 1800px) {
+.e-mail-instellingen-video .blok1.w1140 {
+	width: 1140px;
+	margin: auto;
+}
+}
+.e-mail-instellingen-video .blok1 .ul {
+  text-align: left;
+  color: #000;
+  font-weight: normal;
+  padding-left: 40px;
+  list-style-type: disc;
+}
+.e-mail-instellingen-video .blok1 .nf-form-cont {
+	margin-left: 10px;	
+	margin-right: 10px;
+}
+.e-mail-instellingen-video .blok1 .nf-form-cont input[type=submit]{
+background: linear-gradient(to right, #ff0000, #cc0000);
+	border: 1px solid;
+	color: #fff;
+	width: auto;
+    padding: 15px 35px;
+	font-weight: 600;
+    letter-spacing: 1px;
+}
+.e-mail-instellingen-video .blok1 .nf-form-cont input[type=submit]:hover {
+	background: #F9F9F9;	
+	border:1px solid #cc0000; 
+	color: #cc0000;
+}
+.e-mail-instellingen-video .blok1 .normaal {
+	text-align: left;
+	 padding-left:30px;
+     list-style-type: unset;
+	color: #000;
+    font-size: 14px;
+    font-weight: normal;
+	
+	
+}
+.wrapper>.row:first-child {
+	position: relative;
+	margin-top: 100px;
+}
+.wrapper>.row:first-child:before {
+	content:"";
+	top: -100px;
+	position: absolute;
+    width: 100%;
+    height: 50px; 
+    background: linear-gradient(to right, #ff0000, #cc0000);  
+    z-index: 0;
+}
+.e-mail-instellingen-video .blok1 .nf-form-cont .nf-field-element {
+    background: #fff;
+	border-radius: 10px 10px 0px 0px;
+}
+.e-mail-instellingen-video .blok1 .nf-form-cont .submit-wrap .nf-field-element {
+	background: transparent;
+}
+.e-mail-instellingen-video .blok1 .nf-form-cont textarea {
+ 	resize: vertical;
+    width: 100%;
+}
+.e-mail-instellingen-video .blok1 .nf-form-cont .nf-error .ninja-forms-field {
+	border:none;
+}
+.e-mail-instellingen-video .blok1 .table {
+  word-break: keep-all;
+}
+.gradient-border {
+  border: 1px solid #f0f0f0;
+  border-radius: 10px 10px 0px 0px; 
+  padding: 10px;
+  background: linear-gradient(to right, #ff0000, #cc0000) no-repeat !important; 
+  background-size: 100% 3px !important;
+  background-position: bottom !important;
+  font-family: "Raleway", sans-serif;
+  font-size: 11pt;
+	color: #000;
+}
+.nf-field-element:has(.gradient-border) {
+    position: relative;
+}
+
+.nf-field-element:has(.gradient-border):before {
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    border-radius: 0px;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(to right, #ff0000, #cc0000);
+    z-index: 2;
+}
+.gradient-border:focus {
+      outline: none;
+      box-shadow: 0 -1px 6px rgba(200, 0, 0, 0.25); 
+}
+.wrapper>.row:nth-child(2), .home .footer {
+	position: relative;
+}
+
+.wrapper>.row:nth-child(2):before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #ff0000, #cc0000);
+    z-index: 0;
+}
+.faq .blok section {
+	background-color: #f9f9f9 !important;
+    border: 1px solid #ddd !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1) !important;
+}
+.faq .blok section .section-head {
+	padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+.faq .blok section .section-head h2 {
+	color: #cc0000 !important;
+}
+.faq .epkb-ml-search-title:after {
+width: 250px;
+}
+.faq .epkb-ml-article-section__head, .faq .section-head  {
+    position: relative;
+}
+.faq .section-head:before {
+	content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #ff0000, #cc0000);
+    pointer-events: none; 
+}
+.faq #epkb-ml-article-list-basic-layout .epkb-ml-article-section .epkb-ml-article-section__head {
+	font-weight: 600;	
+}
+.faq .epkb-ml-article-section__head:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+    width: 100%;
+    height: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	background: linear-gradient(to right, #ff0000, #cc0000);
+	box-sizing: border-box;
+}
+.faq #epkb-ml-basic-layout .epkb-show-all-articles, .e-mail-instellingen-video .wp-block-button__link {
+	background: linear-gradient(to right, #ff0000, #cc0000);
+	border: 1px solid transparent !important;
+	color: #fff !important;
+	width: auto !important;
+    height: fit-content !important; 
+  padding: 10px 30px !important;
+  margin-left: 10px !important;
+}
+.e-mail-instellingen-video .home.blok1 h2 {
+  text-align: left;
+}
+.e-mail-instellingen-video .home.blok1 h2:after {
+ position: relative;
+}
+
+.has-background {
+  background-color: #f9f9f9 !important;
+}
+.footer button {
+	background: linear-gradient(to right, #ff0000, #cc0000);
+	border: 1px solid transparent !important;
+	color: #fff !important;
+	width: auto !important;
+  padding: 10px 30px !important;
+  margin: 30px 0px 0px 0px;
+}
+.faq #epkb-ml-basic-layout .epkb-show-all-articles:hover {
+	background: #fff !important;
+	color: #ff0000 !important;
+	border: 1px solid #ff0000 !important;
+}
+.faq .eckb-article-title__icon:before, .faq .epkb-article__icon:before {
+	color: #ff0000;
+	font-size: 1.1em;
+}
+.faq #epkb-ml-basic-layout .section-head .epkb-category-level-1 .epkb-cat-name {
+    font-weight: 600 !important;
+}
+.faq .epkb-articles .epkb-mp-article .eckb-article-title:before, .faq #epkb-ml-popular-articles .epkb-ml-article-container .epkb-article-inner:before, .faq #epkb-ml-newest-articles .epkb-ml-article-container .epkb-article-inner:before, .faq #epkb-ml-recent-articles .epkb-ml-article-container .epkb-article-inner:before  {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 0; /* Start with zero width */
+	height: 1px;
+	margin-left: 20px;
+	background-color: #cc0000;
+	box-sizing: border-box;
+	transition: width 0.5s ease; /* Add a transition for the width */
+}
+
+.faq .epkb-articles .epkb-mp-article:hover .eckb-article-title:before, .faq #epkb-ml-popular-articles .epkb-ml-article-container:hover .epkb-article-inner:before, .faq #epkb-ml-newest-articles .epkb-ml-article-container:hover .epkb-article-inner:before, .faq #epkb-ml-recent-articles .epkb-ml-article-container:hover .epkb-article-inner:before {
+	width: 50px; /* Target width on hover */
+}
+.home {
+	display: block;
+}
+#eckb-article-page-container-v2 {
+	width: auto !important;
+}
+.footer h5, .footer h3 {
+margin: 0px;
+}
+.footer p {
+  margin: 5px 0px 0px 0px;
+}
+
+.fixed-container {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.fixed-container iframe{
+  width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.blok1.popup h2 {
+  padding-top: 0px !important;
+}
+.blok1.popup p, .blok1.popup a  {
+  text-align: center;
+}
+.blok1.popup button {
+  display: block;
+}
+.blok1.popup .wp-block-column {
+  text-align: center;
+}
+.popup {
+  position: fixed;
+  top: 29%;
+  right: -20%; /* Initially hidden */
+  transform: translateY(-50%);
+  width: 15%;
+  padding: 20px;
+  color: #000;
+  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.5s ease-in-out;
+  z-index: 20;
+}
+.popup.show {
+  right: 20px; /* Slide in */
+}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media only screen and (max-width: 1600px) {
+  .fixed-container {
+    height: 500px;
+  }
+  .blok1.popup {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .tv2go-functies-perant {
+    display: flex !important;
+  }
+  .tv2go-functies {
+    display: grid !important;
+    flex: 1;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .fixed-container {
+    height: 400px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .fixed-container {
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 981px) {
+  #epkb-ml-basic-layout #epkb-content-container .epkb-section-container .epkb-ml__module-categories-articles__row .epkb-top-category-box,
+  #epkb-ml__module-articles-list .epkb-ml-article-list-container .epkb-ml-articles-list__row  {
+      width: 100% !important;
+  }
+  #epkb-ml__module-categories-articles #epkb-ml-basic-layout #epkb-content-container {
+    padding: 0px !important;
+  }
+}
+@media only screen and (max-width: 760px)  {
+	/* Force table to not be like tables anymore */
+	table.kbvrg_adreslijst, table.kbvrg_adreslijst thead, table.kbvrg_adreslijst tbody, table.kbvrg_adreslijst th, table.kbvrg_adreslijst td, table.kbvrg_adreslijst tr { 
+		display: block; 
+	}
+	/* Hide table headers (but not display: none;, for accessibility) */
+	table.kbvrg_adreslijst thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	h2 {
+    font-size: 38px;
+  }
+	table.kbvrg_adreslijst tr { border: 1px solid #ccc; }
+	
+	table.kbvrg_adreslijst td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	table.kbvrg_adreslijst td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	table.kbvrg_adreslijst td:nth-of-type(1):before { content: "Adres"; }
+	table.kbvrg_adreslijst td:nth-of-type(2):before { content: "Toeslag"; }
+	table.kbvrg_adreslijst td:nth-of-type(3):before { content: "Geen interesse"; }
+	table.kbvrg_adreslijst td:nth-of-type(4):before { content: "Ongeldig adres"; }
+	table.kbvrg_adreslijst td:nth-of-type(5):before { content: "Opmerkingen"; }
+}
+.e-mail-instellingen-video .blok1 .nf-form-cont .trans .nf-field-element, .e-mail-instellingen-video .blok1 .nf-form-cont .trans-left .nf-field-element {
+	background:transparent;
+}
+.e-mail-instellingen-video .blok1 .nf-form-cont .trans-left .nf-field-element label {
+	text-align:left;
+}
+/* Hide the default checkbox and radio button */
+.e-mail-instellingen-video .blok1 .nf-form-cont .trans-left .nf-field-element input[type="checkbox"], input[type="radio"] {
+    display: none;
+}
+/* Create a custom checkbox and radio button */
+.e-mail-instellingen-video .blok1 .nf-form-cont .trans-left .nf-field-element input[type="checkbox"] + label::before, input[type="radio"] + label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    border: 1px solid #cc0000;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: background 0.3s;
+}
+/* Position the label text */
+.e-mail-instellingen-video .blok1 .nf-form-cont .trans-left .nf-field-element input[type="checkbox"] + label, input[type="radio"] + label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    line-height: 20px;
+}
+/* Style the checkbox and radio button when checked */
+.e-mail-instellingen-video .blok1 .nf-form-cont .trans-left .nf-field-element input[type="checkbox"]:checked + label::before, input[type="radio"]:checked + label::before {
+    background: linear-gradient(to right, #ff0000, #cc0000);
+    border: 1px solid #cc0000;
+}

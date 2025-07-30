@@ -1,0 +1,380 @@
+.zender-item .logo {
+    height: 50px;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+body { 
+    font-family: Arial, sans-serif; 
+    background-color: #F5E9D9;
+    margin: 0px;
+    padding: 0px;
+}
+.footer {
+    position: relative;
+}
+.zenders {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: repeat(13, auto);
+    gap: 10px;
+}
+.footer:before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #ff0000, #cc0000);
+    z-index: 0;
+}
+.container {
+    display: flex; 
+    margin: 0px 20px;
+}
+.sidebar { 
+    width: 250px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px 20px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+.sidebar h3:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, #ff0000, #cc0000);
+    pointer-events: none;
+}
+.sidebar label {
+    font-weight: 700;
+}
+.sidebar h3 {
+    color: #cc0000;
+    font-size: 22px;
+    position: relative;
+}
+.sidebar .submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 2px 0px;
+}
+.zender-lijst { 
+    flex: 1; padding: 10px; 
+}
+.zender-item { 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 8px; 
+}
+.zender-header { 
+    font-weight: bold; 
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+    padding: 8px;
+    gap: 10px;
+    width: 100%;
+    white-space: nowrap;
+}
+#top .zender-header span { 
+    width: 10%;
+    color: #cc0000;
+    font-size: 22px;
+    text-shadow: 1px 1px 1px rgba(75, 0, 0, 0.6);
+}
+.zender-header span { 
+    width: 20%;
+    color: #cc0000;
+    font-size: 22px;
+    text-shadow: 1px 1px 1px rgba(75, 0, 0, 0.6);
+}
+.zender-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+.zender-item span {
+    max-width: 175px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.pagination { 
+    text-align: center; 
+    padding-bottom: 20px;
+}
+.hidden { 
+    display: none !important; 
+}
+.pagination button {
+    background: linear-gradient(to right, #ff0000, #cc0000);
+    border: 1px solid transparent;
+    color: #fff;
+    width: 100px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-transform: none;
+}
+.pagination button a {
+    color: #fff;
+    text-decoration: none;
+}
+.pagination .txt {
+    font-weight: 700;
+    font-size: 18px;
+}
+/* Hide the default checkbox and radio button */
+input[type="checkbox"], input[type="radio"] {
+    display: none;
+}
+/* Create a custom checkbox and radio button */
+input[type="checkbox"] + label::before, input[type="radio"] + label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    border: 1px solid #cc0000;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: background 0.3s;
+}
+/* Position the label text */
+input[type="checkbox"] + label, input[type="radio"] + label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+}
+/* Style the checkbox and radio button when checked */
+input[type="checkbox"]:checked + label::before, input[type="radio"]:checked + label::before {
+    background: linear-gradient(to right, #ff0000, #cc0000);
+    border: 1px solid #cc0000;
+}
+.header-search {
+    display: flex;
+    justify-content: space-between;
+}
+.search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+}
+.search-container h3 {
+    color: #cc0000;
+    font-size: 22px;
+    text-shadow: 1px 1px 1px rgba(75, 0, 0, 0.6);
+    margin: 0px;
+    padding: 10px;
+}
+.search-container input[type="text"]:focus-visible {
+    outline: none;
+}
+.search-container input[type="text"] {
+    width: 300px;
+    margin-top: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+.search-container button {
+    background: linear-gradient(to right, #ff0000, #cc0000);
+    border: 1px solid transparent;
+    color: #fff;
+    width: 100px;
+    margin: 6px 0px 0px 10px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-transform: none;
+}
+.hamburger-menu {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: #fff;
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+/* Mobile Sidebar Styles */
+.sidebar-mobile {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: #fff;
+    z-index: 1000;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    padding: 80px 20px 20px 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+.sidebar-mobile.active {
+    left: 0;
+}
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.menu-toggle, .close-btn { 
+    display: none;
+}
+@media only screen and (max-width: 1650px) {
+    .zender-header { 
+        grid-template-columns: 2fr 2fr 2fr 2fr 1.5fr;
+    }
+    .header-search {
+        flex-direction: column-reverse;
+    }
+    .zenders {
+        grid-auto-flow: row;
+        grid-template-columns: 1fr;
+    }
+}
+@media only screen and (max-width: 1375px) {
+    .zender-header { 
+        grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .zender-header { 
+        grid-template-columns: 2.5fr 1.5fr 2fr 2.5fr 2fr;
+    }
+    #top .zender-header span { 
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .menu-toggle, .close-btn {
+        display: block;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+    }
+    .search-container {
+        flex-direction: column;
+    }
+    .search-container input[type="text"] {
+        margin-left: 10px;
+    }
+    .zender-lijst { 
+        padding: 0px; 
+    }
+    .zender-item .logo {
+        height: 30px;
+    }
+    #top .zender-header span {
+        font-size: 12px;
+    }
+    .zender-item {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0px 125px;
+    }
+    .zender-item span {
+        max-width: 120px;
+        flex-grow: 1;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+    }
+    .sidebar {
+      display: none;
+      margin-top: -55px;
+      position: relative;
+      width: 100%;
+      background-color: #f9f9f9;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    .sidebar h3 {
+      padding-top: 5px;
+    }
+    .sidebar.active {
+      display: block;
+    }
+    .close-btn {
+      text-align: right;
+      font-size: 25px;
+      cursor: pointer;
+      color: #cc0000;
+      font-weight: bold;
+    }
+    .menu-toggle {
+      background: linear-gradient(to right, #ff0000, #cc0000);
+      border: 1px solid transparent;
+      color: #fff;
+      margin: 6px 0px 0px 10px;
+      padding: 8px 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      text-transform: none;
+      width: fit-content;
+    }
+    .sidebar .submenu {
+      display: grid;
+      padding: 2px 5px;
+      grid-template-columns: 1fr 1fr;
+    }
+}
